@@ -245,6 +245,11 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
   display:flex; align-items:center; justify-content:center; font-size:.72rem; transition:.2s ease;
 }
 .podcast-play-link:hover .play-circle{ background:#fff; color:var(--accent); }
+/* ===== LinkedIn Highlights ===== */
+.linkedin-section{ background:#f8fafb; }
+.linkedin-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:24px; margin-top:44px; }
+.linkedin-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:.25s ease; }
+.linkedin-card:hover{ transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(20,50,70,.25); }
 /* ===== Newsletter ===== */
 .newsletter-section p.section-lead{ color:var(--muted); }
 .newsletter-frame-wrap{
@@ -372,6 +377,7 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
       <li><a href="#audio" class="nav-link" data-section="audio">Audio</a></li>
       <li><a href="#newsletter" class="nav-link" data-section="newsletter">Newsletter</a></li>
       <li><a href="#gallery" class="nav-link" data-section="gallery">Galerie</a></li>
+      <li><a href="#linkedin" class="nav-link" data-section="linkedin">LinkedIn</a></li>
       <li><a href="#contact" class="nav-link cta-link" data-section="contact">Kontakt</a></li>
     </ul>
   </nav>
@@ -418,7 +424,7 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
         gedruckte Zeitungen, die Online-Ausgaben von Business Insider und WELT, den täglichen Newsletter oder
         mein privates LinkedIn-Profil.</p>
       <div class="timeline" id="timeline">
-        <details class="timeline-item" open>
+        <details class="timeline-item">
   <summary>
     <span class="timeline-marker"></span>
     <span class="timeline-date">seit 01/2026</span>
@@ -666,11 +672,10 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
             funktionieren — jenseits von „Corporate Slideware".</p>
           <a class="text-link" href="https://www.wearedevelopers.com/videos/100280-the-ai-ready-workforce-upskilling-lessons-from-the-real-world" target="_blank" rel="noopener">Panel auf WeAreDevelopers ansehen →</a>
         </div>
-          </div>
+      </div>
       <div class="video-card reveal">
         <video class="video-native" controls preload="none" poster="images/photo29.jpeg">
-          <source src="videos/road-to-miss-germany..mp4" type="video/mp4">
-      
+          <source src="videos/road-to-miss-germany.mp4" type="video/mp4">
         </video>
         <div class="video-info">
           <h3>„Road to Miss Germany" — Interview-Masterclass (Joyn)</h3>
@@ -678,26 +683,25 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
             Interviewführung für die Teilnehmerinnen.</p>
         </div>
       </div>
-       <div class="video-card reveal">
+      <div class="video-card reveal">
         <div class="linkedin-embed">
           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7298980333113274368?compact=1" height="399" width="504" frameborder="0" allowfullscreen title="Eingebetteter LinkedIn-Beitrag"></iframe>
         </div>
-      </div>
-      </div>
         <div class="video-info">
           <h3>LinkedIn-Video</h3>
           <p>Ausschnitt aus meiner LinkedIn-Videoarbeit.</p>
-         <div class="video-card reveal">
+        </div>
+      </div>
+      <div class="video-card reveal">
         <div class="linkedin-embed">
           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7341775936440221697?compact=1" height="399" width="504" frameborder="0" allowfullscreen title="Eingebetteter LinkedIn-Beitrag"></iframe>
+        </div>
         <div class="video-info">
           <h3>LinkedIn-Video</h3>
           <p>Video für die Business Insider Zukunftsmacherinnen.</p>
         </div>
-        </div>
       </div>
     </div>
-    
   </div>
 </section>
 <section id="audio" class="section audio-section">
@@ -852,6 +856,61 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
     </div>
   </div>
 </section>
+<section id="linkedin" class="section linkedin-section">
+  <div class="container">
+    <p class="section-kicker center">Auf LinkedIn</p>
+    <h2 class="center">LinkedIn-Highlights</h2>
+    <p class="section-lead center">Als LinkedIn Top Voice teile ich regelmäßig Einblicke in meine Arbeit, Karriere-
+      Learnings und exklusive Recherchen. Eine Auswahl meiner Beiträge:</p>
+    <div class="linkedin-grid">
+      <div class="linkedin-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7469636845530800128" height="550" width="100%" frameborder="0" allowfullscreen title="LinkedIn-Beitrag: Leadership, Homeoffice, Karriere"></iframe>
+        </div>
+        <div class="video-info">
+          <p class="podcast-kicker">#Leadership #Homeoffice #Karriere</p>
+          <a class="text-link" href="https://www.linkedin.com/posts/hendrikje-rudnick_leadership-homeoffice-karriere-activity-7469636845530800128-Yrqr" target="_blank" rel="noopener">Beitrag auf LinkedIn ansehen →</a>
+        </div>
+      </div>
+      <div class="linkedin-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7480130230536417280" height="550" width="100%" frameborder="0" allowfullscreen title="LinkedIn-Beitrag: Recruiting Rebels, Skills-based Hiring"></iframe>
+        </div>
+        <div class="video-info">
+          <p class="podcast-kicker">#30u30RR #RecruitingRebels #SkillsBasedHiring</p>
+          <a class="text-link" href="https://www.linkedin.com/posts/hendrikje-rudnick_30u30rr-recruitingrebels-skillsbasedhiring-activity-7480130230536417280-u1jV" target="_blank" rel="noopener">Beitrag auf LinkedIn ansehen →</a>
+        </div>
+      </div>
+      <div class="linkedin-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7492817581125591040" height="550" width="100%" frameborder="0" allowfullscreen title="LinkedIn-Beitrag: Erstes Bewerbungsfoto"></iframe>
+        </div>
+        <div class="video-info">
+          <p class="podcast-kicker">#ErstesBewerbungsfoto #Bewerbungsfoto #Bewerbung</p>
+          <a class="text-link" href="https://www.linkedin.com/posts/hendrikje-rudnick_erstesbewerbungsfoto-bewerbungsfoto-bewerbung-activity-7492817581125591040-q1RZ" target="_blank" rel="noopener">Beitrag auf LinkedIn ansehen →</a>
+        </div>
+      </div>
+      <div class="linkedin-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7495356812498653184" height="550" width="100%" frameborder="0" allowfullscreen title="LinkedIn-Beitrag: Produktivität, Effizienz, Arbeitsleben"></iframe>
+        </div>
+        <div class="video-info">
+          <p class="podcast-kicker">#Produktivität #Effizienz #Arbeitsleben</p>
+          <a class="text-link" href="https://www.linkedin.com/posts/hendrikje-rudnick_produktivitaeut-effizienz-arbeitsleben-activity-7495356812498653184-CQog" target="_blank" rel="noopener">Beitrag auf LinkedIn ansehen →</a>
+        </div>
+      </div>
+      <div class="linkedin-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7430538911740796928" height="550" width="100%" frameborder="0" allowfullscreen title="LinkedIn-Beitrag: Junge Führungskraft, K5-Podcast"></iframe>
+        </div>
+        <div class="video-info">
+          <p class="podcast-kicker">#Leadership #K5Podcast #BoldMovesKindHearts</p>
+          <a class="text-link" href="https://lnkd.in/p/dtDaMeVk" target="_blank" rel="noopener">Beitrag auf LinkedIn ansehen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="contact" class="section contact-section">
   <div class="container contact-grid">
     <div class="reveal">
@@ -961,12 +1020,6 @@ function closeLightbox(){ lightbox.classList.remove('active'); lightboxImg.src='
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
-const contactForm = document.getElementById('contactForm');
-const formNote = document.getElementById('formNote');
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formNote.textContent = 'Danke! Bitte senden Sie diese Nachricht direkt per E-Mail — dieses Formular ist eine Vorschau ohne Versandfunktion.';
-});
 </script>
 </body>
 </html>
