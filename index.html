@@ -211,15 +211,35 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
 .video-info{ padding:24px; }
 .video-info h3{ font-size:1.1rem; margin-bottom:10px; }
 .video-info p{ color:var(--muted); font-size:.92rem; margin-bottom:14px; }
-/* ===== Audio ===== */
+/* ===== Audio / Podcasts (compact list style) ===== */
 .audio-section{ background:#eef4f7; }
-.audio-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; margin-top:44px; }
-.audio-card{ background:var(--card); border-radius:16px; overflow:hidden; border:1px solid var(--border); display:flex; flex-direction:column; }
-.audio-cover{ width:100%; aspect-ratio:1/1; object-fit:cover; }
-.audio-card .audio-body{ padding:24px; display:flex; flex-direction:column; gap:12px; flex-grow:1; }
-.audio-card h3{ font-size:1.05rem; }
-.audio-card p{ color:var(--muted); font-size:.92rem; }
-.audio-card audio{ width:100%; margin-top:auto; }
+.podcast-list{ display:flex; flex-direction:column; gap:18px; margin-top:44px; }
+.podcast-card{
+  display:flex; gap:20px; align-items:center; background:var(--card); border:1px solid var(--border);
+  border-radius:14px; padding:18px; transition:.25s ease;
+}
+.podcast-card:hover{ box-shadow:0 16px 34px -20px rgba(20,50,70,.25); border-color:transparent; }
+.podcast-cover{
+  width:96px; height:96px; border-radius:10px; object-fit:cover; flex-shrink:0; background:#e4e9eb;
+}
+.podcast-body{ flex:1; min-width:0; }
+.podcast-kicker{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent);
+  font-weight:700; margin-bottom:4px;
+}
+.podcast-card h3{ font-size:1.02rem; margin-bottom:8px; }
+.podcast-meta{ color:var(--muted); font-size:.88rem; margin-bottom:12px; }
+.podcast-card audio{ width:100%; height:34px; display:block; }
+.podcast-play-link{
+  display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:.88rem; color:var(--ink);
+  background:#eef4f8; padding:9px 16px 9px 9px; border-radius:30px; transition:.2s ease;
+}
+.podcast-play-link:hover{ background:var(--accent); color:#fff; }
+.play-circle{
+  width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:.72rem; transition:.2s ease;
+}
+.podcast-play-link:hover .play-circle{ background:#fff; color:var(--accent); }
 /* ===== Newsletter ===== */
 .newsletter-section p.section-lead{ color:var(--muted); }
 .newsletter-frame-wrap{
@@ -302,7 +322,7 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
   .about-grid, .contact-grid{ grid-template-columns:1fr; }
   .about-image{ position:static; }
   .about-image img{ aspect-ratio:16/10; object-position:top center; }
-  .video-grid, .audio-grid{ grid-template-columns:1fr; }
+  .video-grid{ grid-template-columns:1fr; }
   .article-grid{ grid-template-columns:repeat(2,1fr); }
   .gallery-grid{ grid-template-columns:repeat(3,1fr); }
   .gallery-item:nth-child(1), .gallery-item:nth-child(6){ grid-column:span 2; grid-row:span 1; }
@@ -326,6 +346,8 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
   .timeline-date{ min-width:auto; }
   .newsletter-frame-title{ display:none; }
   .newsletter-scroll{ max-height:480px; }
+  .podcast-card{ flex-direction:column; align-items:flex-start; }
+  .podcast-cover{ width:100%; height:180px; }
 }
 </style>
 </head>
@@ -630,18 +652,6 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
       Bühnen — hier ein Einblick in meine Arbeit vor der Kamera.</p>
     <div class="video-grid">
       <div class="video-card reveal">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/LvA8LdDvj-E" title="This AI headline is a bluff — and here's how to spot it | Business Insider"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-info">
-          <h3>„Diese KI-Schlagzeile ist ein Bluff — und so erkennt ihr ihn"</h3>
-          <p>Live-Analyse einer KI-Schlagzeile im HR Weekly Podcast: Wie Führungskräfte Quellen prüfen und Hype
-            von Substanz unterscheiden. Gemeinsam mit Host Katharina Schulze.</p>
-          <a class="text-link" href="https://www.youtube.com/watch?v=LvA8LdDvj-E" target="_blank" rel="noopener">Auf YouTube ansehen →</a>
-        </div>
-      </div>
-      <div class="video-card reveal">
         <div class="video-thumb" style="background-image:url('images/photo03.jpeg');">
           <a href="https://www.wearedevelopers.com/@hendrikje-rudnick" target="_blank" rel="noopener" class="play-btn" aria-label="Vortrag ansehen">▶</a>
         </div>
@@ -650,19 +660,6 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
           <p>Talk über KI-Reskilling in der Praxis: Wie Unternehmen echte Fortschritte von reinem
             „Corporate Slideware" unterscheiden können — Managing-Editor-Perspektive auf moderne Arbeit.</p>
           <a class="text-link" href="https://www.wearedevelopers.com/@hendrikje-rudnick" target="_blank" rel="noopener">Vortrag auf WeAreDevelopers →</a>
-        </div>
-      </div>
-      <div class="video-card reveal">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/NV5C5SHSJ78" title="Der Pitch Deines Lebens: Warum Du nicht auf Beförderungen warten darfst"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="video-info">
-          <h3>„Der Pitch Deines Lebens: Warum Du nicht auf Beförderungen warten darfst"</h3>
-          <p>K5-Podcast „BOLD MOVES. KIND HEARTS.": Wie ich mir als redaktionelle Co-Leiterin bei Business Insider
-            proaktiv ein neu zusammengestelltes Team gesichert habe – inklusive Kolleg:innen, die länger im
-            Journalismus sind, als ich alt bin. Warum Warten auf die nächste Beförderung selten der richtige Weg ist.</p>
-          <a class="text-link" href="https://www.youtube.com/playlist?list=PL6RUwzuZHuQOW6-qiV3BRyZHoX4RVaORV" target="_blank" rel="noopener">Zur Playlist auf YouTube →</a>
         </div>
       </div>
     </div>
@@ -675,34 +672,62 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
     <h2 class="center">Podcasts &amp; Audio</h2>
     <p class="section-lead center">Als Host, Co-Host und Interviewgast: Meine Stimme und mein Gesicht in
       verschiedenen Podcast-Formaten rund um Karriere, Psychologie und die neue Arbeitswelt.</p>
-    <div class="audio-grid">
-      <div class="audio-card reveal">
-        <img class="audio-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
-        <div class="audio-body">
-          <h3>Zuhören, Karriere machen: Der Anker-Effekt</h3>
-          <p>Mit diesem psychologischen Trick bekommt ihr in Verhandlungen das Gehalt, das ihr wollt.</p>
+    <div class="podcast-list">
+      <div class="podcast-card reveal">
+        <img class="podcast-cover" src="https://img.youtube.com/vi/LvA8LdDvj-E/hqdefault.jpg" alt="Video-Podcast-Cover: Diese KI-Schlagzeile ist ein Bluff">
+        <div class="podcast-body">
+          <p class="podcast-kicker">HR Weekly Podcast · Video-Podcast · Interviewgast</p>
+          <h3>„Diese KI-Schlagzeile ist ein Bluff — und so erkennt ihr ihn"</h3>
+          <p class="podcast-meta">Live-Analyse einer KI-Schlagzeile mit Host Katharina Schulze: Medienkompetenz,
+            Quellenprüfung und der wahre Mismatch am deutschen Arbeitsmarkt.</p>
+          <a class="podcast-play-link" href="https://www.youtube.com/watch?v=LvA8LdDvj-E" target="_blank" rel="noopener">
+            <span class="play-circle">▶</span> Auf YouTube ansehen
+          </a>
+        </div>
+      </div>
+      <div class="podcast-card reveal">
+        <img class="podcast-cover" src="https://img.youtube.com/vi/NV5C5SHSJ78/hqdefault.jpg" alt="Video-Podcast-Cover: Der Pitch Deines Lebens">
+        <div class="podcast-body">
+          <p class="podcast-kicker">K5-Podcast „BOLD MOVES. KIND HEARTS." · Video-Podcast</p>
+          <h3>„Der Pitch Deines Lebens: Warum Du nicht auf Beförderungen warten darfst"</h3>
+          <p class="podcast-meta">Wie ich mir als redaktionelle Co-Leiterin bei Business Insider proaktiv ein neu
+            zusammengestelltes Team gesichert habe – und warum Warten auf die nächste Beförderung selten der
+            richtige Weg ist.</p>
+          <a class="podcast-play-link" href="https://www.youtube.com/playlist?list=PL6RUwzuZHuQOW6-qiV3BRyZHoX4RVaORV" target="_blank" rel="noopener">
+            <span class="play-circle">▶</span> Zur Playlist auf YouTube
+          </a>
+        </div>
+      </div>
+      <div class="podcast-card reveal">
+        <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
+        <div class="podcast-body">
+          <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
+          <h3>Der Anker-Effekt</h3>
+          <p class="podcast-meta">Mit diesem psychologischen Trick bekommt ihr in Verhandlungen das Gehalt, das ihr wollt.</p>
           <audio controls preload="none">
             <source src="audio/ZKM-folge-ankereffekt.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
         </div>
       </div>
-      <div class="audio-card reveal">
-        <img class="audio-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
-        <div class="audio-body">
-          <h3>Zuhören, Karriere machen: Der Pygmalion-Effekt</h3>
-          <p>Dieser psychologische Trick hilft, Menschen zu Höchstleistungen zu motivieren.</p>
+      <div class="podcast-card reveal">
+        <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
+        <div class="podcast-body">
+          <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
+          <h3>Der Pygmalion-Effekt</h3>
+          <p class="podcast-meta">Dieser psychologische Trick hilft, Menschen zu Höchstleistungen zu motivieren.</p>
           <audio controls preload="none">
             <source src="audio/ZKM-folge-Pygmalion.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
         </div>
       </div>
-      <div class="audio-card reveal">
-        <img class="audio-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
-        <div class="audio-body">
-          <h3>Zuhören, Karriere machen: Der Endowment-Effekt</h3>
-          <p>So findet ihr heraus, was ihr wirklich wollt im Leben – und was ihr nur behaltet, weil ihr es schon habt.</p>
+      <div class="podcast-card reveal">
+        <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
+        <div class="podcast-body">
+          <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
+          <h3>Der Endowment-Effekt</h3>
+          <p class="podcast-meta">So findet ihr heraus, was ihr wirklich wollt im Leben – und was ihr nur behaltet, weil ihr es schon habt.</p>
           <audio controls preload="none">
             <source src="audio/ZKM-folge-Endowment-Effekt.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
