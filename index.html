@@ -211,11 +211,14 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
 .video-info{ padding:24px; }
 .video-info h3{ font-size:1.1rem; margin-bottom:10px; }
 .video-info p{ color:var(--muted); font-size:.92rem; margin-bottom:14px; }
+.linkedin-embed{ display:flex; justify-content:center; background:#f4f6f7; padding:16px; }
+.linkedin-embed iframe{ max-width:100%; border:none; }
+.video-native{ width:100%; display:block; background:#000; aspect-ratio:16/9; }
 /* ===== Audio / Podcasts (compact list style) ===== */
 .audio-section{ background:#eef4f7; }
 .podcast-list{ display:flex; flex-direction:column; gap:18px; margin-top:44px; }
 .podcast-card{
-  display:flex; gap:20px; align-items:center; background:var(--card); border:1px solid var(--border);
+  display:flex; gap:20px; align-items:flex-start; background:var(--card); border:1px solid var(--border);
   border-radius:14px; padding:18px; transition:.25s ease;
 }
 .podcast-card:hover{ box-shadow:0 16px 34px -20px rgba(20,50,70,.25); border-color:transparent; }
@@ -230,6 +233,8 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
 .podcast-card h3{ font-size:1.02rem; margin-bottom:8px; }
 .podcast-meta{ color:var(--muted); font-size:.88rem; margin-bottom:12px; }
 .podcast-card audio{ width:100%; height:34px; display:block; }
+.podcast-embed{ border-radius:12px; overflow:hidden; }
+.podcast-embed iframe{ display:block; border:none; width:100%; }
 .podcast-play-link{
   display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:.88rem; color:var(--ink);
   background:#eef4f8; padding:9px 16px 9px 9px; border-radius:30px; transition:.2s ease;
@@ -653,13 +658,43 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
     <div class="video-grid">
       <div class="video-card reveal">
         <div class="video-thumb" style="background-image:url('images/photo03.jpeg');">
-          <a href="https://www.wearedevelopers.com/@hendrikje-rudnick" target="_blank" rel="noopener" class="play-btn" aria-label="Vortrag ansehen">▶</a>
+          <a href="https://www.wearedevelopers.com/videos/100280-the-ai-ready-workforce-upskilling-lessons-from-the-real-world" target="_blank" rel="noopener" class="play-btn" aria-label="Panel ansehen">▶</a>
         </div>
         <div class="video-info">
-          <h3>WeAreDevelopers World Congress Europe 2026</h3>
-          <p>Talk über KI-Reskilling in der Praxis: Wie Unternehmen echte Fortschritte von reinem
-            „Corporate Slideware" unterscheiden können — Managing-Editor-Perspektive auf moderne Arbeit.</p>
-          <a class="text-link" href="https://www.wearedevelopers.com/@hendrikje-rudnick" target="_blank" rel="noopener">Vortrag auf WeAreDevelopers →</a>
+          <h3>The AI-Ready Workforce: Upskilling Lessons from the Real World</h3>
+          <p>Panel beim WeAreDevelopers World Congress Europe 2026 mit Bernd Datler (ASFINAG), Laura Thorson
+            (GitHub) und Mark Pollok (Trenkwalder Group): Welche Upskilling-Strategien in der Praxis wirklich
+            funktionieren — jenseits von „Corporate Slideware".</p>
+          <a class="text-link" href="https://www.wearedevelopers.com/videos/100280-the-ai-ready-workforce-upskilling-lessons-from-the-real-world" target="_blank" rel="noopener">Panel auf WeAreDevelopers ansehen →</a>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7341775936440221697?compact=1" height="399" width="504" frameborder="0" allowfullscreen title="Eingebetteter LinkedIn-Beitrag"></iframe>
+        </div>
+        <div class="video-info">
+          <h3>LinkedIn-Video</h3>
+          <p>Ausschnitt aus meiner LinkedIn-Videoarbeit rund um Karriere und Arbeitswelt.</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <div class="linkedin-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7298980333113274368?compact=1" height="399" width="504" frameborder="0" allowfullscreen title="Eingebetteter LinkedIn-Beitrag"></iframe>
+        </div>
+        <div class="video-info">
+          <h3>LinkedIn-Video</h3>
+          <p>Ein weiterer Ausschnitt aus meiner LinkedIn-Videoarbeit.</p>
+        </div>
+      </div>
+      <div class="video-card reveal">
+        <video class="video-native" controls preload="none" poster="images/photo03.jpeg">
+          <source src="videos/road-to-miss-germany.mp4" type="video/mp4">
+          Dein Browser unterstützt das Video-Element nicht.
+        </video>
+        <div class="video-info">
+          <h3>„Road to Miss Germany" — Interview-Masterclass (Joyn)</h3>
+          <p>Ausschnitt aus der Joyn-Serie „Road to Miss Germany": Ich halte eine Masterclass zum Thema
+            Interviewführung für die Teilnehmerinnen.</p>
         </div>
       </div>
     </div>
@@ -674,28 +709,27 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
       verschiedenen Podcast-Formaten rund um Karriere, Psychologie und die neue Arbeitswelt.</p>
     <div class="podcast-list">
       <div class="podcast-card reveal">
+        <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
+        <div class="podcast-body">
+          <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
+          <h3>Der Endowment-Effekt</h3>
+          <p class="podcast-meta">So findet ihr heraus, was ihr wirklich wollt im Leben – und was ihr nur behaltet, weil ihr es schon habt.</p>
+          <audio controls preload="none">
+            <source src="audio/ZKM-folge-Endowment-Effekt.mp3" type="audio/mpeg">
+            Dein Browser unterstützt das Audio-Element nicht.
+          </audio>
+        </div>
+      </div>
+      <div class="podcast-card reveal">
         <img class="podcast-cover" src="https://img.youtube.com/vi/LvA8LdDvj-E/hqdefault.jpg" alt="Video-Podcast-Cover: Diese KI-Schlagzeile ist ein Bluff">
         <div class="podcast-body">
           <p class="podcast-kicker">HR Weekly Podcast · Video-Podcast · Interviewgast</p>
           <h3>„Diese KI-Schlagzeile ist ein Bluff — und so erkennt ihr ihn"</h3>
           <p class="podcast-meta">Live-Analyse einer KI-Schlagzeile mit Host Katharina Schulze: Medienkompetenz,
             Quellenprüfung und der wahre Mismatch am deutschen Arbeitsmarkt.</p>
-          <a class="podcast-play-link" href="https://www.youtube.com/watch?v=LvA8LdDvj-E" target="_blank" rel="noopener">
-            <span class="play-circle">▶</span> Auf YouTube ansehen
-          </a>
-        </div>
-      </div>
-      <div class="podcast-card reveal">
-        <img class="podcast-cover" src="https://img.youtube.com/vi/NV5C5SHSJ78/hqdefault.jpg" alt="Video-Podcast-Cover: Der Pitch Deines Lebens">
-        <div class="podcast-body">
-          <p class="podcast-kicker">K5-Podcast „BOLD MOVES. KIND HEARTS." · Video-Podcast</p>
-          <h3>„Der Pitch Deines Lebens: Warum Du nicht auf Beförderungen warten darfst"</h3>
-          <p class="podcast-meta">Wie ich mir als redaktionelle Co-Leiterin bei Business Insider proaktiv ein neu
-            zusammengestelltes Team gesichert habe – und warum Warten auf die nächste Beförderung selten der
-            richtige Weg ist.</p>
-          <a class="podcast-play-link" href="https://www.youtube.com/playlist?list=PL6RUwzuZHuQOW6-qiV3BRyZHoX4RVaORV" target="_blank" rel="noopener">
-            <span class="play-circle">▶</span> Zur Playlist auf YouTube
-          </a>
+          <div class="podcast-embed">
+            <iframe src="https://open.spotify.com/embed/episode/0Qk0oFtjrKuvpipCvQBLTW?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
       <div class="podcast-card reveal">
@@ -711,6 +745,19 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
         </div>
       </div>
       <div class="podcast-card reveal">
+        <img class="podcast-cover" src="https://img.youtube.com/vi/NV5C5SHSJ78/hqdefault.jpg" alt="Video-Podcast-Cover: Der Pitch Deines Lebens">
+        <div class="podcast-body">
+          <p class="podcast-kicker">K5-Podcast „BOLD MOVES. KIND HEARTS." · Video-Podcast</p>
+          <h3>„Der Pitch Deines Lebens: Warum Du nicht auf Beförderungen warten darfst"</h3>
+          <p class="podcast-meta">Wie ich mir als redaktionelle Co-Leiterin bei Business Insider proaktiv ein neu
+            zusammengestelltes Team gesichert habe – und warum Warten auf die nächste Beförderung selten der
+            richtige Weg ist.</p>
+          <div class="podcast-embed">
+            <iframe src="https://open.spotify.com/embed/episode/5mAPOjwN5Nlb6mxaF0kma4?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="podcast-card reveal">
         <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
         <div class="podcast-body">
           <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
@@ -718,18 +765,6 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
           <p class="podcast-meta">Dieser psychologische Trick hilft, Menschen zu Höchstleistungen zu motivieren.</p>
           <audio controls preload="none">
             <source src="audio/ZKM-folge-Pygmalion.mp3" type="audio/mpeg">
-            Dein Browser unterstützt das Audio-Element nicht.
-          </audio>
-        </div>
-      </div>
-      <div class="podcast-card reveal">
-        <img class="podcast-cover" src="audio/zuhoeren-karriere-machen-cover.png" alt="Podcast-Cover: Zuhören, Karriere machen">
-        <div class="podcast-body">
-          <p class="podcast-kicker">Zuhören, Karriere machen · Business Insider</p>
-          <h3>Der Endowment-Effekt</h3>
-          <p class="podcast-meta">So findet ihr heraus, was ihr wirklich wollt im Leben – und was ihr nur behaltet, weil ihr es schon habt.</p>
-          <audio controls preload="none">
-            <source src="audio/ZKM-folge-Endowment-Effekt.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
         </div>
