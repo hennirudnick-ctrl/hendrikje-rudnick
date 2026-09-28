@@ -294,10 +294,13 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
   position:absolute; top:26px; right:34px; background:none; border:none; color:#fff; font-size:1.8rem; cursor:pointer;
 }
 /* ===== Contact ===== */
-.contact-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:60px; }
-.contact-section p{ color:#3a3d40; margin-bottom:20px; }
-.contact-list{ display:flex; flex-direction:column; gap:14px; margin-top:24px; }
-.contact-list li{ display:flex; align-items:center; gap:12px; font-size:.95rem; }
+.contact-grid{ display:block; }
+.contact-section p{ color:#3a3d40; margin-bottom:20px; font-size:1.15rem; }
+.contact-list{
+display:flex; flex-direction:row; flex-wrap:wrap; gap:20px 40px;
+margin-top:32px; justify-content:center;
+}
+.contact-list li{ display:flex; align-items:center; gap:10px; font-size:1.1rem; }
 .contact-list a:hover{ color:var(--accent); text-decoration:underline; }
 .contact-form{ background:var(--card); padding:32px; border-radius:16px; border:1px solid var(--border); display:flex; flex-direction:column; gap:14px; }
 .form-row{ display:flex; gap:14px; }
@@ -308,8 +311,7 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
 .contact-form input:focus, .contact-form textarea:focus{ outline:none; border-color:var(--accent); }
 .form-note{ font-size:.85rem; color:var(--accent); min-height:18px; font-weight:600; }
 /* ===== Icons ===== */
-.icon{ display:inline-flex; align-items:center; justify-content:center; color:var(--accent); flex-shrink:0; }
-.icon svg{ width:19px; height:19px; }
+.icon svg{ width:24px; height:24px; }
 /* ===== Footer ===== */
 .site-footer{
   background:var(--ink); color:#c9ccce; padding:30px 24px; display:flex; align-items:center; justify-content:center;
@@ -669,7 +671,7 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
       </div>
       <div class="video-card reveal">
         <video class="video-native" controls preload="none" poster="images/photo29.jpeg">
-          <source src="videos/road-to-miss-germany.mp4" type="video/mp4">
+          <source src="videos/road-to-miss-germany..mp4" type="video/mp4">
         </video>
         <div class="video-info">
           <h3>„Road to Miss Germany" — Interview-Masterclass (Joyn)</h3>
@@ -853,8 +855,8 @@ h2 { font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:6px; }
   <div class="container contact-grid">
     <div class="reveal">
       <p class="section-kicker">Let's talk</p>
-      <h2>Lassen Sie uns sprechen</h2>
-      <p>Ich freue mich, wenn wir uns austauschen und beantworte Ihre Fragen gerne persönlich.</p>
+      <h2>Lass uns sprechen</h2>
+      <p>Ich freue mich, wenn wir uns austauschen und beantworte deine Fragen gerne persönlich.</p>
       <ul class="contact-list">
         <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span><a href="mailto:henni.rudnick@gmail.com">henni.rudnick@gmail.com</a></li>
         <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>Berlin, Deutschland</li>
